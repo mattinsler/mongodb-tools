@@ -54,6 +54,10 @@
     return new CompositeStream([ChangeEncodingStream('utf8'), JsonStream.parse(), exports.DumpToObjectStream()]);
   };
 
+  exports.createJsonToDumpStream = function() {
+    return new CompositeStream([ChangeEncodingStream('utf8'), JsonStream.parse()]);
+  };
+
   exports.createObjectToBsonStream = function() {
     return exports.ObjectToBsonStream();
   };
